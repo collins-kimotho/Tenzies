@@ -28,8 +28,8 @@ Tenzies is a simple dice game where the goal is to roll until all the dice show 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/tenzies-game.git
-   cd tenzies-game
+   git clone https://github.com/collins-kimotho/Tenzies.git
+   cd Tenzies
    ```
 
 2. Install the dependencies:
