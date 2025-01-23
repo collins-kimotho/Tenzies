@@ -18,11 +18,17 @@ export default function App() {
       }))
   }
 
+  function hold(id){
+    console.log(id)
+  }
+
   const diceElements = dice.map((dieObj) => (
     <Die
       key={dieObj.id} 
       value={dieObj.value}
       isHeld = {dieObj.isHeld}
+      hold = {() => hold(dieObj.id)}
+      
      />
   ))
 
