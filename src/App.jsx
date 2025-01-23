@@ -96,6 +96,9 @@ export default function App() {
           Reset
         </button>
       </div>
+      <div className="">
+        <p className="text-gray-500">Made by KimCollins</p>
+      </div>
      
       
       
