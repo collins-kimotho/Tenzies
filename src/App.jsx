@@ -13,21 +13,32 @@ export default function App() {
       .fill(0)
       .map(() => ({
         value: Math.ceil(Math.random()*6),
-        isHeld: true,
+        isHeld: false,
         id: nanoid()
       }))
   }
+  // Update the 'hold' function to flip the 'isHeld' 
+  // property on the object in the array that was clicked
+  // based on the 'id' prop passed into the function.
+  function hold(id) {
+    console.log("hold function called with id: ", id)
+    setDice(oldDice => {
+        return oldDice.map(die => {
+            return die.id === id ?
+                {...die, isHeld: !die.isHeld} :
+                die
+        })
+    })
+}
 
-  function hold(id){
-    console.log(id)
-  }
 
   const diceElements = dice.map((dieObj) => (
     <Die
       key={dieObj.id} 
       value={dieObj.value}
       isHeld = {dieObj.isHeld}
-      hold = {() => hold(dieObj.id)}
+      hold = {hold}
+      id = {dieObj.id}
       
      />
   ))
@@ -35,6 +46,8 @@ export default function App() {
   function rollDice(){
     setDice(generateAllNewDice())
   }
+
+
 
 
   return (
